@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+    sendbot:
+        image: sendbot
+        container_name: sendbot
+        environment:
+          - DELTACHAT_BOT_ADDR=             # E-Mail-Address of your bot
+          - DELTACHAT_BOT_PASSWORD=         # Passwort of your bot
+          - DELTACHAT_DB_PATH=/tmp/bot_db/
+        restart: always
+        ports:
+          - 8025:25
+        networks:
+          - tipi_main_network              # easier to use the Network of the reverse-proxy
+networks:
+  tipi_main_network:
+    driver: bridge
+    name: runtipi_tipi_main_network
