@@ -10,3 +10,11 @@ passthrough_senders =" and run ```./scripts/cmdeploy run``` in the chatmail-dire
 docker build -t sendbot .
 docker compose up -d
 ```
+To activate sendmail outside docker as a command, you can use this:
+
+```
+echo 'alias sendmail="docker exec -it sendbot python sendmail.py"' >> .bashrc
+source .bashrc
+```
+
+Please write a lot of issues!
