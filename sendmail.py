@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import smtplib
 import argparse
 import os
