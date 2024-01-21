@@ -1,4 +1,5 @@
 PPATH=$(which python3)
+$PPATH pip3 install -r scripts/requirements.txt
 cp sendbot.py /usr/local/bin/sendbot.py
 chmod +x /usr/local/bin/sendbot.py
 useradd -r -s /bin/false sendbot
