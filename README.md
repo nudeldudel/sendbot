@@ -16,5 +16,9 @@ To activate sendmail outside docker as a command, you can use this:
 echo 'alias sendmail="docker exec -it sendbot python sendmail.py"' >> .bashrc
 source .bashrc
 ```
-
+You __may__ install senbot.py as a service an sendmail.py as a command with using
+```
+sudo scripts/install.sh
+```
+I don't think, it works very proper!
 Please write a lot of issues!
