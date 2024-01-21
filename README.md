@@ -1,10 +1,10 @@
 # sendbot
 A Bot For Delta.Chat to overtake sendmail and SMTP innings from scripts and WebApps
 
-Bevor you can use the bot, you have to fill the to enviroment-variables with the Address and the Passwort of your bot. If you use an #chatmail-instance, make sure, that you added the address of this bot to the Part "# list of chatmail accounts which can send outbound un-encrypted mail
-passthrough_senders =" and run ```./scripts/cmdeploy run``` in the chatmail-directory!
+Bevor you can use the bot, you have to fill the to enviroment-variables with the Address and the Passwort of your bot. If you use an #chatmail-instance, make sure, that you added the address of this bot to the Part `# list of chatmail accounts which can send outbound un-encrypted mail 
+passthrough_senders =` and run ```./scripts/cmdeploy run``` in the chatmail-directory!
 
-
+After it runs in the _same network_ as the other containers, you can set your SMTP-Server at the web-script and so on to "sendbot:25" and no tls and auth is needed.
 
 ```
 docker build -t sendbot .
