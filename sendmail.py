@@ -38,7 +38,7 @@ def prompt_fct():
 def sendMail(fromaddr, toaddrs, subject, msg):
     msg = "Subject: "+subject+"\r\n\r\n"+msg
     print("Message length is", len(msg))
-    server = smtplib.SMTP('localhost',8025)
+    server = smtplib.SMTP('localhost',25)
     server.set_debuglevel(1)
     server.sendmail(fromaddr, toaddrs, msg)
     if server.quit():
