@@ -1,9 +1,9 @@
-PPATH=$(which python3)
-$PPATH pip3 install -r scripts/requirements.txt
+#!/usr/bin/bash
 cp sendbot.py /usr/local/bin/sendbot.py
 chmod +x /usr/local/bin/sendbot.py
 useradd -r -s /bin/false sendbot
 mkdir /etc/sendbot && chown -R sendbot:sendbot /etc/sendbot
+PPATH=$(sudo -u sendbot which python3)
 echo "PPATH=$PPATH" > /etc/sendbot/sendbot.conf
 echo "DELTACHAT_HOST=localhost" >> /etc/sendbot/sendbot.conf
 echo "DELTACHAT_PORT=8025" >> /etc/sendbot/sendbot.conf
