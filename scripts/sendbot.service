@@ -3,6 +3,7 @@ Description=Delta.Chat SendBot
 After=syslog.target
 
 [Service]
+EnvironmentFile=/etc/sendbot/sendbot.conf
 Type=simple
 User=sendbot
 Group=sendbot
