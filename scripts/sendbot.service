@@ -4,11 +4,18 @@ After=syslog.target
 
 [Service]
 EnvironmentFile=/etc/sendbot/sendbot.conf
+Environment="PPATH=${PPATH}"
+Environment="DELTACHAT_BOT_ADDR=${DELTACHAT_BOT_ADDR}"
+Environment="DELTACHAT_HOST=${DELTACHAT_HOST}"
+Environment="DELTACHAT_PORT=${DELTACHAT_PORT}"
+Environment="DELTACHAT_DB_PATH=${DELTACHAT_DB_PATH}"
+Environment="DELTACHAT_BOT_PASSWORD=${DELTACHAT_BOT_PASSWORD}"
+Environment="DEFAULT_FROM=${DEFAULT_FROM}"
 Type=simple
 User=sendbot
 Group=sendbot
 WorkingDirectory=/etc/sendbot
-ExecStart=${PPATH} /usr/local/bin/sendbot.py
+ExecStart=/usr/bin/python3 /usr/local/bin/sendbot.py
 SyslogIdentifier=sendbot
 StandardOutput=syslog
 StandardError=syslog
