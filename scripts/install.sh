@@ -23,3 +23,7 @@ echo "DEFAULT_FROM=$default" >> /etc/sendbot/sendbot.conf
 cp scripts/sendbot.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable --now sendbot.service
+
+cp sendmail.py /usr/local/bin/
+chmod +x /usr/local/bin/sendmail.py
+ln /usr/local/bin/sendmail.py /usr/local/bin/sendmail
