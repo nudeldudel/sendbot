@@ -8,8 +8,8 @@ services:
           - DELTACHAT_BOT_PASSWORD=         # Passwort of your bot
           - DELTACHAT_DB_PATH=/tmp/bot_db/
         restart: always
-        ports:
-          - 8025:25
+        ports:                              # coment out or erease this two lines
+          - 8025:25                         # if you don't want an open Port outside
         networks:
           - tipi_main_network              # easier to use the Network of the reverse-proxy
 networks:
