@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import smtplib
 import argparse
+from sys import argv
 import os
 
 defFrom = os.getenv("DEFAULT_FROM")
