@@ -1,0 +1,18 @@
+[Unit]
+Description=Delta.Chat SendBot
+After=syslog.target
+
+[Service]
+Type=simple
+User=sendbot
+Group=sendbot
+WorkingDirectory=/etc/sendbot
+ExecStart=/usr/local/bin/sendbot.py
+SyslogIdentifier=sendbot
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
