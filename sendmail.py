@@ -45,6 +45,9 @@ def sendMail(fromaddr, toaddrs, subject, msg):
     if server.quit():
         exit()
 
+if not len(argv) > 1:
+    prompt_fct()
+
 parser = argparse.ArgumentParser(description="sendmail", exit_on_error=False)
 parser.add_argument("rcpt", type=None, help="recipient of the email")
 parser.add_argument("--mailFrom", "-f", type=None, required=False, default=defFrom, help="sender of the email")
