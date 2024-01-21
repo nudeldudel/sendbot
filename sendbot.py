@@ -10,6 +10,8 @@ import json
 
 from aiosmtpd.controller import Controller
 
+host = os.getenv("DELTACHAT_HOST", default="")
+port = os.getenv("DELTACHAT_PORT", default="25")
 db_path = os.getenv("DELTACHAT_DB_PATH", default="/tmp/bot_db/")
 ac = deltachat.Account(db_path)
 
@@ -75,7 +77,7 @@ class ExampleHandler():
          return '250 Message accepted for delivery'
 
 async def amain(loop):
-    cont = Controller(ExampleHandler(), hostname='', port=25)
+    cont = Controller(ExampleHandler(), hostname=host, port=port)
     cont.start()
 
 if __name__ == '__main__':
