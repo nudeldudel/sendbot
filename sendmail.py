@@ -32,7 +32,7 @@ def prompt_fct():
             break
         if not line:
             break
-        msg = msg + line
+        msg = msg + "\n" + line
 
     subject = trennzeichen.join(subject)
     sendMail(fromaddr, toaddrs, subject, msg)
