@@ -69,7 +69,7 @@ class ExampleHandler():
          msg = deltachat.message.Message.new_empty(ac, "text")
          msg.set_text(message)
          msg.is_bot()
-         msg.force_plaintext()
+         #msg.force_plaintext() # maybe it doesn't work with some scripts
          msg.set_override_sender_name(absender)
          ergebnis = chat.send_msg(msg)
          print (ergebnis) # send_message
